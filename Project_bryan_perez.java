@@ -72,6 +72,7 @@ public class Project_bryan_perez
                System.out.println();
          
             }  
-      
+            System.out.println("The number of policies with a smoker is: " + smokerCount);  
+            System.out.println("The number of policies with a non-smoker is: " + nonSmokerCount);      
         }
 }
