@@ -1,7 +1,5 @@
 public class PolicyHolder
 {
-   private int policyNumber;
-   private String providerName;
    private String holderFirstName;
    private String holderLastName;
    private int policyHolderAge;
@@ -12,8 +10,6 @@ public class PolicyHolder
    
       /**
       Constructor that accepts argument for each field
-      @param pNumber The policy number of the user
-      @param pName The name of the Insurance Provider 
       @param firstName The first name of the Policy Holder
       @param lastName The last name of the Policy Holder
       @param age The age of the Policy Holder
@@ -22,11 +18,9 @@ public class PolicyHolder
       @param weight The weight of the Policy Holder 
    */
    
-   public PolicyHolder(int pNumber, String pName, String firstName, String lastName, 
+   public PolicyHolder(String firstName, String lastName, 
                  int age, String smokerStatus, double height, double weight)
    {
-      policyNumber = pNumber;
-      providerName = pName;
       holderFirstName = firstName;
       holderLastName = lastName;
       policyHolderAge = age;
@@ -37,8 +31,6 @@ public class PolicyHolder
    
    public PolicyHolder(PolicyHolder object2)
    {
-      policyNumber = object2.policyNumber;
-      providerName = object2.providerName;
       holderFirstName = object2.holderFirstName;
       holderLastName = object2.holderLastName;
       policyHolderAge = object2.policyHolderAge;
@@ -48,25 +40,7 @@ public class PolicyHolder
    }
    
    //Setters
-    
-    /**
-      The setPolicyNumber method sets the policy number of the policy holder
-      @param pNumber The policy number
-   */
-
-   public void setPolicyNumber(int pNumber){
-      policyNumber = pNumber;
-   }
-   
-       /**
-      The setProviderName method sets the name of the Insurance Provider
-      @param pName The provider name
-   */
-   
-   public void setProviderName(String pName){
-      providerName = pName;
-   }
-   
+      
        /**
       The setHolderFirstName method sets the first name of the Policy Holder
       @param firstName The first name
@@ -122,23 +96,7 @@ public class PolicyHolder
    }
  
     //Getters
-    
-    /**
-      The getPolicyNumber method returns the Policy number of the Policy Holder
-      @return The policy number.
-   */
-   public int getPolicyNumber(){
-      return policyNumber;
-   }
-   
-       /**
-      The getProviderName method returns the Provider name of the Policy Holder
-      @return The provider name.
-   */
-   public String getProviderName(){
-      return providerName;
-   }
-   
+       
        /**
       The getHolderFirstName method returns the first name of the Policy Holder
       @return The holder's first name.
@@ -249,15 +207,13 @@ public class PolicyHolder
       return insurancePolicyPrice;
    }
    public String toString() {
-      return String.format ("Policy Number: " + policyNumber +
-             "Provider Name: " + providerName +
-             "Policyholder's First Name: " + holderFirstName +
-             "Policyholder's Last Name: " + holderLastName +
-             "Policyholder's Age: " + policyHolderAge +
-             "Policyholder's Smoking Status: " + holderSmokerStatus +
-             "Policyholder's Height: %,.1f inches\n", holderHeight +
-             "Policyholder's Weight: %,.1f pounds\n", holderWeight +
-             "Policyholder's BMI: %,.2f\n", calculateBMI() +
-             "Policy Price: $%,.2f\n", calculateInsurancePolicyPrice());
+      return String.format("\nPolicyholder's First Name: " + holderFirstName +
+             "\nPolicyholder's Last Name: " + holderLastName +
+             "\nPolicyholder's Age: " + policyHolderAge +
+             "\nPolicyholder's Smoking Status (Y/N): " + holderSmokerStatus +
+             "\nPolicyholder's Height: %,.1f inches\n" +
+             "Policyholder's Weight: %,.1f pounds\n" +
+             "Policyholder's BMI: %,.2f\n" +
+             "Policy Price: $%,.2f\n", holderHeight, holderWeight, calculateBMI(), calculateInsurancePolicyPrice());
    }
 }
