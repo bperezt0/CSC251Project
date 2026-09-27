@@ -17,6 +17,9 @@ public class Policy
    {
       return new PolicyHolder(policyHolder); 
    }
-
-
+   
+   public String toString() {
+      return String.format(policyHolder.toString());
+   }
+   
 }//End Class
