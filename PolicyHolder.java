@@ -248,11 +248,16 @@ public class PolicyHolder
    
       return insurancePolicyPrice;
    }
-  
-   
-   
-   
-   
-   
-   
+   public String toString() {
+      return String.format ("Policy Number: " + policyNumber +
+             "Provider Name: " + providerName +
+             "Policyholder's First Name: " + holderFirstName +
+             "Policyholder's Last Name: " + holderLastName +
+             "Policyholder's Age: " + policyHolderAge +
+             "Policyholder's Smoking Status: " + holderSmokerStatus +
+             "Policyholder's Height: %,.1f inches\n", holderHeight +
+             "Policyholder's Weight: %,.1f pounds\n", holderWeight +
+             "Policyholder's BMI: %,.2f\n", calculateBMI() +
+             "Policy Price: $%,.2f\n", calculateInsurancePolicyPrice());
+   }
 }
